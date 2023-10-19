@@ -73,4 +73,8 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
 }

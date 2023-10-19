@@ -1,16 +1,36 @@
+
+
+import HeroSvg from "./icons/HeroSvg";
+
 import { getProfile } from "@/sanity/sanity.query";
 import type { ProfileType } from "@/types";
-import HeroSvg from "./icons/HeroSvg";
-import Job from "./components/Job";
 
-import { osLocale } from "os-locale";
+import Job from "./components/Job";
+import MainSlider from "./components/MainSlider/MainSlider";
+
+import PricingTable from "./components/pricingTable";
+
+import { getPackages } from "@/sanity/packages";
+import { PackagesType } from "@/types/packages";
+
+import { getPackagesCategory } from "@/sanity/packages";
+import { PackagesCategoryType } from "@/types/packages";
+
+import { getSlider } from "@/sanity/siteSettings";
+import { SliderType } from "@/types/siteSettings";
 
 export default async function Home() {
   const profile: ProfileType[] = await getProfile();
-  const locale = await osLocale();
-
+  const category: PackagesCategoryType[] = await getPackagesCategory();
+  const packages: PackagesType[] = await getPackages();
+  const slider: SliderType[] = await getSlider();
+  
   return (
     <main className="max-w-7xl mx-auto lg:px-16 px-6">
+      <MainSlider slider={slider}/>
+  
+      <PricingTable category={category} packages={packages} />
+   
       <section className="flex xl:flex-row flex-col xl:items-center items-start xl:justify-center justify-between gap-x-12 lg:mt-32 mt-20 mb-16">
         {profile &&
           profile.map((data) => (

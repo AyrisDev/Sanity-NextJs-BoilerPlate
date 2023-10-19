@@ -2,9 +2,9 @@ import { BiPackage } from "react-icons/bi";
 import { defineField, defineType } from "sanity";
 import { GrProjects } from "react-icons/gr";
 
-const menu = defineType({
-  title: "Menu",
-  name: "menu",
+const packagesCategory = defineType({
+  title: "PackagesCategory",
+  name: "packagesCategory",
   type: "document",
   icon: GrProjects,
   fields: [
@@ -20,6 +20,14 @@ const menu = defineType({
       name: "title",
       type: "localeString",
     }),
+    defineField({
+        title: 'Çoklu Paket?',
+        name: 'coklu',
+        type: 'boolean'
+      }),
+
+
+
   ],
   preview: {
     select: {
@@ -29,4 +37,4 @@ const menu = defineType({
   },
 });
 
-export default menu;
+export default packagesCategory;

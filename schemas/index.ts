@@ -1,7 +1,12 @@
-import job from "./job";
-import profile from "./profile";
-import project from "./project";
-import menu from "./menu";
-import siteSettings from "./siteSettings";
+
+import packagesCategory from "./packages/packagesCategory";
+import packagesDesc from "./packages/packagesDesc";
+import packages from "./packages/packages";
+import slider from "./siteSettings/slider";
+import menu from "./siteSettings/menu";
+import siteSettings from "./siteSettings/siteSettings";
+import setup from "./setup/setup";
+import setupCategory from "./setup/setupCat";
+
 import { localeString } from "./localeStringType";
-export const schemaTypes = [profile, job, project, menu, localeString, siteSettings];
+export const schemaTypes = [ siteSettings, menu, slider, packages, packagesCategory, packagesDesc, setupCategory, setup, localeString ];

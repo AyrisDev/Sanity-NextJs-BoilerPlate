@@ -1,12 +1,17 @@
 import { PortableTextBlock } from "sanity";
 
-export type MenuType = {
-  _id: string;
-  id: number;
-  title: string;
-  name: string;
-  url: string;
-};
+
+
+
+
+
+
+
+
+
+
+
+
 
 export type ProfileType = {
   _id: string;
