@@ -13,36 +13,42 @@ const setupCategory = defineType({
       type: "string",
     }),
     defineField({
-        name: "title",
-        type: "localeString",
-      }),
+      name: "title",
+      type: "localeString",
+    }),
     defineField({
       name: "id",
       type: "number",
     }),
+    {
+      title: "Slug",
+      name: "slug",
+      type: "slug",
+      options: {
+        source: "name",
+        maxLength: 200, // will be ignored if slugify is set
+      },
+    },
     defineField({
-        name: "description",
-        description: "Description",
-        type: "localeString",
-      }),
+      name: "description",
+      description: "Description",
+      type: "localeString",
+    }),
 
     {
-        name: "image",
-        title: "Image",
-        type: "image",
-        description: "Upload a desc Icon",
-        options: { hotspot: true },
-        fields: [
-          {
-            name: "alt",
-            title: "Alt",
-            type: "string",
-          },
-        ],
-      },
-
-
-
+      name: "image",
+      title: "Image",
+      type: "image",
+      description: "Upload a desc Icon",
+      options: { hotspot: true },
+      fields: [
+        {
+          name: "alt",
+          title: "Alt",
+          type: "string",
+        },
+      ],
+    },
   ],
   preview: {
     select: {
